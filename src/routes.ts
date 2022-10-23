@@ -4,7 +4,7 @@ import { getTasks, getTaskById, saveTask, updateTask, finishTask, removeTask } f
 const routes = Router()
 
 routes.get('/', (request: Request, response: Response) => {
-    return response.json({message: 'This is your home!'})
+    return response.json({message: 'api are working'})
 })
 
 routes.get('/tasks'         , getTasks)
