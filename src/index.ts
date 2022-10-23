@@ -5,6 +5,9 @@ import * as cors from 'cors'
 import routes from "./routes"
 import { AppDataSource } from "./data-source";
 
+const PORT = 3333;
+const HOST = '0.0.0.0';
+
 const app = express()
 app.use(bodyParser.json())
 
@@ -17,6 +20,6 @@ AppDataSource.initialize().then(() => {
   console.log("TypeORM connection error: ", error)
 );
 
-console.log("Express application is up and running on port 3333");
-app.listen(3333)
-
+app.listen(PORT, HOST, () => {
+  console.log(`Express application is up and running on port ${PORT}`);
+});
