@@ -5,7 +5,7 @@ import * as cors from 'cors'
 import routes from "./routes"
 import { AppDataSource } from "./data-source";
 
-const PORT = 8080;
+const PORT = 3333;
 const HOST = '0.0.0.0';
 
 const app = express()
