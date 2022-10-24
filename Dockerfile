@@ -3,7 +3,7 @@ FROM node:16 as appbuild
 WORKDIR /app
 COPY package*.json ./
 RUN npm install
-COPY ./src ./src
+COPY . ./
 RUN npm run build
 
 # production environment
