@@ -1,13 +1,15 @@
-FROM node:16
-
-WORKDIR /usr/src/app
-
+# build environment
+FROM node:16 as appbuild
+WORKDIR /app
 COPY package*.json ./
-
-RUN npm install --only=production
-
+RUN npm install
 COPY ./src ./src
+RUN RUN npm run build
 
-EXPOSE 3333
-
-CMD [ "npm", "start" ]
+# production environment
+FROM node:16-slim
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY --from=appbuild /app/build ./build
+CMD [ "node", "build/index.js" ]

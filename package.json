@@ -20,8 +20,10 @@
       "typeorm": "0.3.10"
    },
    "scripts": {
+      "test": "echo \"Error: no tests installed\" && exit 1",
       "dev": "nodemon src/index.ts",
       "start": "ts-node src/index.ts",
-      "typeorm": "typeorm-ts-node-commonjs"
+      "typeorm": "typeorm-ts-node-commonjs",
+      "build": "tsc --build"
    }
 }
