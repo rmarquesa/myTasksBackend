@@ -4,7 +4,7 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY ./src ./src
-RUN RUN npm run build
+RUN npm run build
 
 # production environment
 FROM node:16-slim
