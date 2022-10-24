@@ -12,4 +12,5 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm install
 COPY --from=appbuild /app/build ./build
+EXPOSE 3333
 CMD [ "node", "build/index.js" ]
